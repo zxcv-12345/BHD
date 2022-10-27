@@ -1,4 +1,5 @@
 #include<stdio.h>
+#pragma warning( disable : 4716 )
 int b(int n);
 int s(int n);
 int main()
@@ -12,7 +13,7 @@ int main()
 }
 int b(int n)
 {
-	int a[99];
+	int a[99]{};
 	int i = 0;
 	while (n>7)
 	{
@@ -26,8 +27,8 @@ int b(int n)
 }
 int s(int n)
 {
-	int a[99], i = 0;
-	char c[16] = { '0','1','2','3','4','5','6','7','8','9', 'A','B','C','D','E','F'};
+	int a[99]{}, i = 0;
+	char c[16] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 	while (n>15)
 	{
 		a[i] = n % 16;
@@ -35,6 +36,6 @@ int s(int n)
 		n = n / 16;
 	}
 	a[i] = n;
-	for (; i >= 0; i++)
+	for (; i >= 0; i--)
 		printf("%c",c[a[i]]);
 }
