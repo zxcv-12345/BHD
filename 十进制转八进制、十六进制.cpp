@@ -5,13 +5,14 @@ int s(int n);
 int main()
 {
 	int n;
+	printf("请输入十进制的一个整数！\n");
 	scanf_s("%d", &n);
 	b(n);
 	printf("\n");
 	s(n);
 	return 0;
 }
-int b(int n)
+int b(int n) //八进制
 {
 	int a[99]{};
 	int i = 0;
@@ -25,7 +26,7 @@ int b(int n)
 	for (; i >= 0; i--)
 		printf("%d", a[i]);
 }
-int s(int n)
+int s(int n) //十六进制
 {
 	int a[99]{}, i = 0;
 	char c[16] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
@@ -36,6 +37,6 @@ int s(int n)
 		n = n / 16;
 	}
 	a[i] = n;
-	for (; i >= 0; i--)
+	for (; i >= 0; i--) //循环遍历[16]数列（字符型）
 		printf("%c",c[a[i]]);
 }
